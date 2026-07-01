@@ -1,1 +1,664 @@
-# CV
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamil Hasan - Professional Resume</title>
+    <meta name="description" content="Professional resume website of Jamil Hasan - Digital Content Creator, Pinterest Manager, and Canva Designer.">
+    <style>
+        /* --- CSS VARIABLES & ROOT --- */
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --primary-light: #EFF6FF;
+            --text-dark: #1F2937;
+            --text-muted: #4B5563;
+            --bg-main: #FFFFFF;
+            --bg-card: #F9FAFB;
+            --border-color: #E5E7EB;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        /* --- BASE STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: #F3F4F6;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- ACCESSIBILITY FOCUS --- */
+        a:focus, button:focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* --- FLOATING ACTION BUTTON --- */
+        .btn-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .btn-float:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -3px rgba(37, 99, 235, 0.4);
+        }
+
+        /* --- STICKY HEADER --- */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 15px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- MAIN CONTAINER --- */
+        .resume-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 40px auto;
+            background-color: var(--bg-main);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            padding: 50px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid var(--primary-light);
+            margin-bottom: 40px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            border: 2px solid var(--primary);
+            flex-shrink: 0;
+        }
+
+        .hero-details h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-details .title {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        /* --- SECTION LAYOUT --- */
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        .section-title span.icon {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* --- GRID & CARDS --- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        /* --- TIMELINE (EDUCATION) --- */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid var(--primary-light);
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            border: 2px solid var(--bg-main);
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .timeline-meta {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        /* --- SKILLS PROGRESS BARS --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background-color: var(--bg-card);
+            padding: 16px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary-light);
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0; /* Animated via JS load or default look */
+        }
+
+        /* --- LISTS --- */
+        .styled-list {
+            list-style: none;
+        }
+
+        .styled-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .styled-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* --- DIGITAL EXPERIENCE --- */
+        .exp-item {
+            margin-bottom: 25px;
+        }
+
+        .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            margin-top: auto;
+            background-color: var(--text-dark);
+            color: #9CA3AF;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .header-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .resume-container {
+                margin: 20px auto;
+                padding: 25px;
+                border-radius: 0;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+            .btn-float {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* --- PRINT STYLESHEET (A4 OPTIMIZED) --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 15mm 15mm 15mm 15mm;
+            }
+            
+            html, body {
+                background-color: #FFF !important;
+                color: #000 !important;
+                font-size: 11pt;
+            }
+
+            .header, .btn-float, .footer {
+                display: none !important;
+            }
+
+            .resume-container {
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                width: 100% !important;
+            }
+
+            .card, .skill-item {
+                background-color: #FFF !important;
+                border: 1px solid #D1D5DB !important;
+                break-inside: avoid;
+                box-shadow: none !important;
+                transform: none !important;
+            }
+
+            .section {
+                break-inside: avoid;
+                margin-bottom: 30px;
+            }
+
+            .progress-bar {
+                border: 1px solid #000 !important;
+                background-color: #FFF !important;
+            }
+
+            .progress-fill {
+                background-color: #000 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .hero {
+                border-bottom: 2px solid #000 !important;
+            }
+
+            .avatar {
+                border: 2px solid #000 !important;
+                color: #000 !important;
+                background-color: #FFF !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="header-nav">
+            <a href="#" class="logo">JH RESUME</a>
+            <ul class="nav-links">
+                <li><a href="#objective">Objective</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="resume-container">
+        
+        <section class="hero" aria-label="Identification Summary">
+            <div class="avatar" aria-hidden="true">JH</div>
+            <div class="hero-details">
+                <h1>JAMIL HASAN</h1>
+                <p class="title">Digital Content Creator | Pinterest Manager | Canva Designer | Entry-Level Professional</p>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span>📍</span> <span>Tejgaon, Dhaka, Bangladesh</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span> <a href="tel:+8801616700055">+880 1616-700055</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span> <a href="mailto:jamilhassanxny@gmail.com">jamilhassanxny@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="objective" class="section">
+            <h2 class="section-title"><span class="icon">🎯</span> Career Objective</h2>
+            <p>Motivated, honest, and hardworking individual seeking an opportunity to begin a professional career. Recently completed the SSC examination (result awaiting) and eager to learn new skills while contributing positively to an organization. A quick learner with basic computer knowledge, digital content experience, and a strong willingness to work in any responsible position.</p>
+        </section>
+
+        <section id="profile" class="section">
+            <h2 class="section-title"><span class="icon">👤</span> Personal Information</h2>
+            <div class="info-grid">
+                <div class="card">
+                    <h3>Identity</h3>
+                    <p><strong>Nationality:</strong> Bangladeshi</p>
+                    <p><strong>Current Address:</strong> Tejgaon, Dhaka, Bangladesh</p>
+                </div>
+                <div class="card">
+                    <h3>Languages</h3>
+                    <ul class="styled-list">
+                        <li>Bangla (Native)</li>
+                        <li>English (Basic Communication)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2 class="section-title"><span class="icon">🎓</span> Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">Secondary School Certificate (SSC)</div>
+                    <div class="timeline-meta">Result: Awaiting Publication (2026)</div>
+                    <p>Completed secondary school level curriculum focused on core baseline academic fundamentals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2 class="section-title"><span class="icon">⚡</span> Professional Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-info"><span>Canva Design</span><span>95%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Pinterest Management</span><span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Digital Product Upload (Gumroad)</span><span>88%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Microsoft Word & Core PC Ops</span><span>85%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Internet Browsing & SEO Basics</span><span>87%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 87%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Basic AI Productivity Tools</span><span>85%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Communication & Teamwork</span><span>92%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Time Management & Learning</span><span>95%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2 class="section-title"><span class="icon">💼</span> Digital Experience</h2>
+            <div class="card">
+                <div class="exp-item">
+                    <div class="exp-role">Pinterest Content Management</div>
+                    <ul class="styled-list">
+                        <li>Created and managed visual Pinterest pins mapped to niche audiences.</li>
+                        <li>Scheduled dynamic content matrixes for strategic, consistent asset publishing.</li>
+                        <li>Applied fundamental Pinterest SEO techniques to optimize discoverability and brand engagement.</li>
+                    </ul>
+                </div>
+                <hr style="border: 0; height: 1px; background: var(--border-color); margin: 20px 0;">
+                <div class="exp-item">
+                    <div class="exp-role">Digital Product Management</div>
+                    <ul class="styled-list">
+                        <li>Engineered and deployed active digital standard products on Gumroad.</li>
+                        <li>Authored clear, highly-optimized product titles and persuasive descriptions.</li>
+                        <li>Structured, categorized, and maintained structured product storefront layouts.</li>
+                    </ul>
+                </div>
+                <hr style="border: 0; height: 1px; background: var(--border-color); margin: 20px 0;">
+                <div class="exp-item">
+                    <div class="exp-role">Canva Design Experience</div>
+                    <ul class="styled-list">
+                        <li>Designed dynamic high-conversion thumbnails, structured social media graphics, and digital promotional layout materials.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">💎</span> Core Strengths</h2>
+            <div class="info-grid">
+                <div class="card">
+                    <ul class="styled-list">
+                        <li>Honest and Responsible</li>
+                        <li>Hardworking & Disciplined</li>
+                        <li>Positive Professional Attitude</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <ul class="styled-list">
+                        <li>Quick Learning Capacity</li>
+                        <li>Willingness to Work Under Pressure</li>
+                        <li>Strictly Punctual</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">🚀</span> Career Goal</h2>
+            <p>To build a stable career, support my family financially, and continuously improve my professional skills through absolute dedication, absolute honesty, and structured hard work within a progressive framework.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">📋</span> References</h2>
+            <p style="color: var(--text-muted); italicized">Available upon formal structural request.</p>
+        </section>
+
+    </main>
+
+    <button class="btn-float" onclick="window.print()" aria-label="Download Resume PDF or Print">
+        <span>🖨️</span> Download PDF / Print
+    </button>
+
+    <footer class="footer">
+        <p>Designed Professionally • Jamil Hasan Resume</p>
+    </footer>
+
+</body>
+</html>
